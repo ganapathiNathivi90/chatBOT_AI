@@ -1,0 +1,324 @@
+.error {
+  color: #cb0000;
+  margin-top: 10px;
+}
+
+.body {
+  background-size: cover;
+  background-position: 100px -45px;
+  background-image: url("../src//images/chatBotImg.webp");
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  position: relative;
+}
+
+.chatContainer {
+  width: 30%;
+  min-height: 440px;
+  position: relative;
+  top: 10%;
+  left: 15%;
+  padding: 20px;
+  background-color: rgb(255 255 255 / 69%);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgb(0 0 0 / 45%);
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  color: #3d719e;
+}
+
+.fileInput {
+  padding: 8px;
+  display: none;
+}
+
+.uploadButton {
+  color: white;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 30px;
+  display: flex
+;
+  height: 30px;
+}
+.uploadButton svg{
+  filter: brightness(0.3);
+}
+.uploadFileOption{
+  display: flex;
+  margin: 10px 0px;
+}
+.uploadFileOption span{
+  font-size: 12px;
+}
+.textarea {
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.questionSection {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.questionInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.askButton {
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.answerHeader {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.historySection {
+  max-height: 200px;
+  overflow-y: auto;
+}
+ul{
+  padding: 5px;
+  overflow: hidden;
+}
+li{
+  margin-bottom: 20px;
+}
+.questionCls{
+  width: 80%;
+}
+
+.upload-container {
+  background: #fff;
+  margin-right: 10px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3sease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uploadSection{
+  margin-right: 10px;
+}
+.upload-container:hover {
+  transform: scale(1.05);
+}
+
+.upload-box {
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-box:hover {
+  background-color: #ffe0e6;
+}
+
+.upload-box img {
+  width: 16px;
+  display: block;
+  animation: wiggle 1s infinite alternate ease-in-out;
+}
+
+
+
+.file-input {
+  cursor: pointer;
+  width: 30px;
+  position: absolute;
+  opacity: 0;
+  height: 30px;
+}
+
+/* Funny Wiggle Animation */
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Bouncing Effect on Click */
+.upload-box:active {
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* Chat container */
+.chat-container {
+  display: flex;
+  justify-content: flex-start; /* Align left by default */
+  margin: 10px;
+}
+.answerCls{
+  margin-left: auto;
+
+}
+/* Chat Bubble */
+.answerCls, .questionCls {
+  max-width: 75%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #3c709c, #2d64a396);
+  color: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  transition: transform 0.2s;
+}
+
+/* Typing Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat Bubble Arrow */
+.answerCls::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #3c709cc9;
+}
+
+/* Message Text */
+.message-text {
+  margin: 0;
+  word-wrap: break-word;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effect */
+.answerCls:hover {
+  transform: scale(1.05);
+}
+
+/* Scrollbar Styling */
+.historySection::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.historySection::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for the track */
+  border-radius: 10px;
+}
+
+.historySection::-webkit-scrollbar-thumb {
+  background: #4183d5cf; /* Scroll thumb color */
+  border-radius: 10px;
+}
+
+.historySection::-webkit-scrollbar-thumb:hover {
+  background: #2a66b0; /* Darker shade on hover */
+}
+
+.askButton {
+  position: absolute;
+  right: 0px;
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.askButton:hover {
+  transform: scale(1.1);
+}
+
+.askButton svg {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0.2);
+}
+
+.askButton i {
+  font-size: 24px;
+  color: white;
+}
