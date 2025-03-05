@@ -53,6 +53,7 @@ h1 {
 .uploadFileOption{
   display: flex;
   margin: 10px 0px;
+  column-gap: 20px;
 }
 .uploadFileOption span{
   font-size: 12px;

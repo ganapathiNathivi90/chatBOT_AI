@@ -188,7 +188,7 @@ function App() {
               </label>
               <input type="file" title="Choose File" onChange={handleFileChange} className="file-input" />
             </div>
-            {/* <span>Choose file</span> */}
+             <span>Choose file</span> 
 
           </div>
 
@@ -208,7 +208,7 @@ function App() {
                 </svg>
               </button>
             </div>
-            {/* <span>Upload</span> */}
+             <span>Upload</span>
 
           </div>
           <div>
@@ -226,7 +226,7 @@ function App() {
 
               </button>
             </div>
-            {/* <span>Info</span> */}
+             <span>Info</span> 
 
           </div>
         </div>
